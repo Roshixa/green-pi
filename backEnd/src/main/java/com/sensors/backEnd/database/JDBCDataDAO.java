@@ -17,9 +17,11 @@ public class JDBCDataDAO implements DataDAO {
 		try {
 			connection = ConnectionFactory.getConnection();
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("INSERT INTO sensors.data (temperature ,humidity) VALUES (?,?)");
+					.prepareStatement("INSERT INTO sensors.data (temperature ,humidity,moisiture,luminosity) VALUES (?,?,?,?)");
 			preparedStatement.setDouble(1, data.getTemperature());
 			preparedStatement.setDouble(2, data.getHumidity());
+			preparedStatement.setDouble(3, data.getMoisiture());
+			preparedStatement.setDouble(4, data.getLuminosity());
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -31,8 +33,11 @@ public class JDBCDataDAO implements DataDAO {
 	public void createNewTable() {
 		String sql = "CREATE TABLE IF NOT EXISTS data (\n"
 				+ "	id integer PRIMARY KEY AUTO_INCREMENT,\n"
-				+ "	temperature double NOT NULL,\n" + "	humidity double\n"
-				+ ");";
+				+ "	temperature double NOT NULL,\n"
+				+ "	humidity double NOT NULL,\n"
+				+ "	moisiture double NOT NULL,\n"
+				+ "	luminosity double NOT NULL,\n"
+				+ "	date TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n" + ");";
 		try {
 			connection = ConnectionFactory.getConnection();
 			Statement statement = connection.createStatement();
