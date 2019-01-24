@@ -8,16 +8,16 @@ public class Data {
 	Double temperature;
 	Double humidity;
 	Double moisiture;
-	Double light;
+	Double luminosity;
 	Date date;
 	
 	public Data(Integer id, Double temperature, Double humidity,
-			Double moisiture, Double light, Date date) {
+			Double moisiture, Double luminosity, Date date) {
 		this.id = id;
 		this.temperature = temperature;
 		this.humidity = humidity;
 		this.moisiture = moisiture;
-		this.light = light;
+		this.luminosity = luminosity;
 		this.date = date;
 	}
 
