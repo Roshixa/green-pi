@@ -1,4 +1,4 @@
-package readData;
+package com.sensors.backEnd.readData;
 
 import com.pi4j.io.spi.SpiChannel;
 import com.pi4j.io.spi.SpiDevice;
