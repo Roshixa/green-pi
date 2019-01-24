@@ -3,12 +3,11 @@ package com.sensors.backEnd;
 import java.util.Date;
 
 public class Data {
-	Integer id;
-	Double temperature;
-	Double humidity;
-	Double moisiture;
-	Double luminosity;
-	Date date;
+	private Double temperature;
+	private Double humidity;
+	private Double moisiture;
+	private Double luminosity;
+	private Date date;
 
 	public Data(Double temperature, Double humidity, Double moisiture,
 			Double luminosity) {
@@ -21,6 +20,27 @@ public class Data {
 
 	public Data() {
 		super();
+	}
+	
+	
+	public Double getTemperature() {
+		return temperature;
+	}
+
+	public Double getHumidity() {
+		return humidity;
+	}
+
+	public Double getMoisiture() {
+		return moisiture;
+	}
+
+	public Double getLuminosity() {
+		return luminosity;
+	}
+
+	public Date getDate() {
+		return date;
 	}
 
 	@Override
