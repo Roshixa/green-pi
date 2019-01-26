@@ -1,7 +1,9 @@
 package main.beans;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import main.utils.StringUtils;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
     private Integer id;
     private String email;

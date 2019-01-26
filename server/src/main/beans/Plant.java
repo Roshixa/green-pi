@@ -1,5 +1,8 @@
 package main.beans;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Plant {
     private Integer id;
     private Integer userId;
