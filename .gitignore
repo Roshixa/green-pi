@@ -2,3 +2,6 @@
 server/.idea/
 .idea/
 server/out/
+server.iml
+server/server.iml
+*.iml

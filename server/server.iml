@@ -20,5 +20,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="JBoss 15.0.1.Final" level="application_server_libraries" />
+    <orderEntry type="library" name="javax:javaee-api:8.0" level="project" />
+    <orderEntry type="library" name="com.h2database:h2:1.4.197" level="project" />
+    <orderEntry type="library" scope="TEST" name="junit:junit:4.12" level="project" />
   </component>
 </module>
