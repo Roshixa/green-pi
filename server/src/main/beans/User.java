@@ -1,5 +1,7 @@
 package main.beans;
 
+import main.utils.StringUtils;
+
 public class User {
     private Integer id;
     private String email;
@@ -9,7 +11,7 @@ public class User {
     public User(Integer id, String email, String password, String name) {
         this.id = id;
         this.email = email;
-        this.password = password;
+        this.password = StringUtils.encrypt(password);
         this.name = name;
     }
 
