@@ -1,4 +1,4 @@
-package beans;
+package main.beans;
 
 public class User {
     private Integer id;

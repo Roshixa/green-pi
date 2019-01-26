@@ -1,6 +1,6 @@
-package service.impl;
+package main.service.impl;
 
-import service.RaspberryService;
+import main.service.RaspberryService;
 
 public class RaspberryServiceImpl implements RaspberryService {
 }

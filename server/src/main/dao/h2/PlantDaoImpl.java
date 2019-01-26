@@ -1,6 +1,6 @@
-package dao.h2;
+package main.dao.h2;
 
-import dao.PlantDao;
+import main.dao.PlantDao;
 
 public class PlantDaoImpl implements PlantDao {
 }
