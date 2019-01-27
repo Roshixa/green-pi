@@ -8,7 +8,7 @@ import java.util.List;
 public interface PlantService {
     boolean add (String userEmail, String dbAddress, String dbUsername, String dbPassword, Integer dbPort, String name, String description);
 
-    Plant find(String dbAddress, Integer port);
+    Plant find(String hash);
 
     List<Plant> findByUserEmail(User user);
 }

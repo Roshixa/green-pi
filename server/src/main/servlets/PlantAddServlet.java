@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static main.utils.StringUtils.encrypt;
+
 @WebServlet("/add")
 public class PlantAddServlet extends HttpServlet {
     private static final UserService userService = new UserServiceImpl();
@@ -27,7 +29,7 @@ public class PlantAddServlet extends HttpServlet {
             Integer port = Integer.getInteger(request.getParameter("port"));
             String userEmail = userService.getUserEmail(request.getSession());
             plantService.add(userEmail, dbAddress,dbUsername, dbPassword,port,name,description );
-            if (plantService.find (dbAddress, port)!=null){
+            if (plantService.find(encrypt(dbAddress + port)) != null) {
                 response.sendRedirect(request.getContextPath() + "/stats");
             } else {
                 response.sendRedirect(request.getContextPath() + "/add");
@@ -40,7 +42,7 @@ public class PlantAddServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (userService.hasLoggedIn(request.getSession())) {
             request.setAttribute("plants", plantService.findByUserEmail(userService.getSessionUser(request.getSession())));
-            request.getRequestDispatcher("WEB-INF/layout/add.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/layout/add.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/");
         }
