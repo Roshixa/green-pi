@@ -18,7 +18,7 @@
         <br />
         <div class="ui container grid">
         <div class="ui secondary vertical menu four wide column">
-        <a class="item" href="/add">
+        <a class="item" href="add">
         <i class="plus icon"></i> Add
         </a>
         <a class="active item green">
@@ -31,11 +31,11 @@
         <div class="menu">
         <div class="header">Plants</div>
         <c:forEach var="plant" items="${plants}">
-            <a class="item" href="/live/<c:out value="${plant.hash}"/>"><c:out value="${plant.name}"/></a>
+            <a class="item" href="live/<c:out value="${plant.hash}"/>"><c:out value="${plant.name}"/></a>
         </c:forEach>
         </div>
         </div>
-        <a class="item active red" href="/logout">
+        <a class="item active red" href="logout">
         <i class="sign-out icon"></i> Logout
         </a>
         </div>
