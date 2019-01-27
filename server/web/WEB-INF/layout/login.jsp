@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,18 +23,18 @@
         <div class="ui two column very relaxed stackable grid">
             <div class="column">
                 <h2 class="ui header dividing center aligned">Login</h2>
-                <form class="ui form">
+        <form class="ui form" method="post" action="login">
                     <div class="field">
                         <label>Email</label>
                         <div class="ui left icon input">
-                            <input type="email" placeholder="Email">
+        <input name="email" type="email" placeholder="Email">
                             <i class="at icon"></i>
                         </div>
                     </div>
                     <div class="field">
                         <label>Password</label>
                         <div class="ui left icon input">
-                            <input type="password" placeholder="Password">
+        <input name="password" type="password" placeholder="Password">
                             <i class="lock icon"></i>
                         </div>
                     </div>
@@ -43,32 +43,32 @@
             </div>
             <div class="middle aligned column">
                 <h2 class="ui header dividing center aligned">Signup</h2>
-                <form class="ui form">
+        <form class="ui form" method="post" action="login">
                     <div class="field">
                         <label>Complete Name</label>
                         <div class="ui left icon input">
-                            <input type="text" placeholder="Complete Name">
+        <input name="name" type="text" placeholder="Complete Name">
                             <i class="user icon"></i>
                         </div>
                     </div>
                     <div class="field">
                         <label>Email</label>
                         <div class="ui left icon input">
-                            <input type="email" placeholder="Email">
+        <input name="email" type="email" placeholder="Email">
                             <i class="at icon"></i>
                         </div>
                     </div>
                     <div class="field">
                         <label>Password</label>
                         <div class="ui left icon input">
-                            <input type="password" placeholder="Password">
+        <input name="password" type="password" placeholder="Password">
                             <i class="lock icon"></i>
                         </div>
                     </div>
                     <div class="field">
                         <label>Password Confirmation</label>
                         <div class="ui left icon input">
-                            <input type="password" placeholder="Password Confirmation">
+        <input name="password_confirmation" type="password" placeholder="Password Confirmation">
                             <i class="lock icon"></i>
                         </div>
                     </div>
