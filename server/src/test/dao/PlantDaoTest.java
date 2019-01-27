@@ -48,6 +48,7 @@ public class PlantDaoTest {
         UserDao userDao = new UserDaoImpl();
         List<Plant> plants = plantDao.find(userDao.find(EXISTANT_USER_EMAIL));
         assertNotNull(plants);
+        assertTrue(plants.size() > 0);
 
         plants = plantDao.find(new User(" " + new Random().nextFloat(), " ", " "));
         assertEquals(0, plants.size());
