@@ -1,5 +1,6 @@
 package main.beans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Readings {
@@ -16,6 +17,10 @@ public class Readings {
     }
 
     public Readings() {
+        luminosity = new ArrayList<>();
+        humidity = new ArrayList<>();
+        moisture = new ArrayList<>();
+        temperature = new ArrayList<>();
     }
 
     public List<Double> getLuminosity() {
