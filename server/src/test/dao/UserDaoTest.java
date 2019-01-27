@@ -36,10 +36,10 @@ public class UserDaoTest {
 
     @Test
     public void saveUser() {
-        User user = new User(null, EXISTANT_USER, " ", " ");
+        User user = new User(EXISTANT_USER, " ", " ");
         assertFalse(userDao.save(user));
 
-        user = new User(null, new Random().nextInt() + EXISTANT_USER + "_test", " ", " ");
+        user = new User(new Random().nextInt() + EXISTANT_USER + "_test", " ", " ");
         assertTrue(userDao.save(user));
     }
 }

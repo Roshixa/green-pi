@@ -21,7 +21,7 @@ public class StringUtilsTest {
         User user = new User();
         assertEquals("{}", StringUtils.toJSON(user));
 
-        user = new User(1, null, null, null);
-        assertEquals("{\"id\":1}", StringUtils.toJSON(user));
+        user = new User("a@gmail.com", null, null);
+        assertEquals("{\"email\":\"a@gmail.com\"}", StringUtils.toJSON(user));
     }
 }
