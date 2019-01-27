@@ -31,9 +31,12 @@ public class PlantAddServlet extends HttpServlet {
             plantService.add(userEmail, dbAddress,dbUsername, dbPassword,port,name,description );
             if (plantService.find (dbAddress, port)!=null){
                 response.sendRedirect(request.getContextPath() + "/stats");
+            } else {
+                response.sendRedirect(request.getContextPath() + "/add");
             }
+        } else {
+            response.sendRedirect(request.getContextPath() + "/");
         }
-        response.sendRedirect(request.getContextPath() + "/");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
