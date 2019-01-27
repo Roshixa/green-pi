@@ -26,7 +26,7 @@ public class PlantServiceImpl implements PlantService {
 
     @Override
     public Plant find(String dbAddress, Integer port) {
-        return plantDao.find(dbAddress,port);
+        return plantDao.find(encrypt(dbAddress+port));
     }
 
     @Override

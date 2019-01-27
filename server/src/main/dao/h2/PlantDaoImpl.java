@@ -14,14 +14,11 @@ public class PlantDaoImpl implements PlantDao {
     private static final Integer DEFAULT_PORT_NUMBER = 3306;
 
     @Override
-    public Plant find(String address, Integer port) {
+    public Plant find(String hash) {
         Connection connection = DbConnectionsUtils.createH2Connection(UserDaoImpl.HOSTNAME);
         if (connection != null) {
-            if (port == null){
-                port = DEFAULT_PORT_NUMBER;
-            }
             try (Statement statement = connection.createStatement()) {
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM Plant WHERE dbAddress='" + address + "' AND dbPort='" + port + "'");
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM Plant WHERE hash='" + hash + "'");
                 if (resultSet.next()) {
                     return createPlantFromResultSet(resultSet);
                 }

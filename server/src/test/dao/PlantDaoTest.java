@@ -13,6 +13,7 @@ import org.junit.Test;
 import java.util.List;
 import java.util.Random;
 
+import static main.utils.StringUtils.encrypt;
 import static org.junit.Assert.*;
 
 public class PlantDaoTest {
@@ -33,13 +34,13 @@ public class PlantDaoTest {
 
     @Test
     public void find() {
-        Plant plant = plantDao.find(EXISTANT_DB_ADDRESS, EXISTANT_DB_PORT);
+        Plant plant = plantDao.find(encrypt(EXISTANT_DB_ADDRESS + EXISTANT_DB_PORT));
         assertNotNull(plant);
 
-        plant = plantDao.find(EXISTANT_DB_ADDRESS, EXISTANT_DB_PORT + new Random().nextInt());
+        plant = plantDao.find(encrypt(EXISTANT_DB_ADDRESS+ EXISTANT_DB_PORT + new Random().nextInt()));
         assertNull(plant);
 
-        plant = plantDao.find(EXISTANT_DB_ADDRESS + new Random().nextInt(), EXISTANT_DB_PORT);
+        plant = plantDao.find(encrypt(EXISTANT_DB_ADDRESS + new Random().nextInt() + EXISTANT_DB_PORT));
         assertNull(plant);
     }
 
@@ -68,7 +69,7 @@ public class PlantDaoTest {
         Integer port = new Random().nextInt();
         plant = new Plant(" " + new Random().nextInt(), EXISTANT_DB_ADDRESS, " ", " ", port, " ", " ", " ");
         plantDao.save(plant);
-        assertEquals(port, plantDao.find(EXISTANT_DB_ADDRESS, port).getDbPort());
+        assertEquals(port, plantDao.find(encrypt(EXISTANT_DB_ADDRESS+ port)).getDbPort());
     }
 
 }
