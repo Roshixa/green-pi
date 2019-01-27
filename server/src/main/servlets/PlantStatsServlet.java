@@ -29,7 +29,7 @@ public class PlantStatsServlet extends HttpServlet {
             List<Reading> readings = raspberryService.getLastData(plants);
             request.setAttribute("plants", plants);
             request.setAttribute("readings", readings);
-            request.getRequestDispatcher("WEB-INF/layout/stats.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/layout/stats.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/");
         }
