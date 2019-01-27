@@ -33,8 +33,9 @@ public final class DbConnectionsUtils {
                 " dbPassword VARCHAR(255) NOT NULL, " +
                 " dbPort INTEGER DEFAULT 3306, " +
                 " name VARCHAR(255) NOT NULL, " +
-                " description TEXT NOT NULL, " +
-                " PRIMARY KEY (dbAddress,dbPort))";
+                " description TEXT NULL, " +
+                " hash VARCHAR(255) NOT NULL, " +
+                " PRIMARY KEY (hash))";
         statement.executeUpdate(sql);
         statement.close();
     }

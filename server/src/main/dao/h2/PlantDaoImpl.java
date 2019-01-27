@@ -4,6 +4,7 @@ import main.beans.Plant;
 import main.beans.User;
 import main.dao.PlantDao;
 import main.utils.DbConnectionsUtils;
+import main.utils.StringUtils;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -62,7 +63,7 @@ public class PlantDaoImpl implements PlantDao {
         Connection connection = DbConnectionsUtils.createH2Connection(UserDaoImpl.HOSTNAME);
         if (connection != null) {
             try (PreparedStatement preparedStatement = connection
-                    .prepareStatement("INSERT INTO Plant VALUES (?,?,?,?,?,?,?)")) {
+                    .prepareStatement("INSERT INTO Plant VALUES (?,?,?,?,?,?,?,?)")) {
                 preparedStatement.setString(1, plant.getUserEmail());
                 preparedStatement.setString(2, plant.getDbAddress());
                 preparedStatement.setString(3, plant.getDbUsername());
@@ -70,6 +71,7 @@ public class PlantDaoImpl implements PlantDao {
                 preparedStatement.setInt(5, plant.getDbPort());
                 preparedStatement.setString(6, plant.getName());
                 preparedStatement.setString(7, plant.getDescription());
+                preparedStatement.setString(8, StringUtils.encrypt(plant.getDbAddress()+plant.getDbPort()));
                 preparedStatement.execute();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -96,6 +98,7 @@ public class PlantDaoImpl implements PlantDao {
             plant.setDbPassword(resultSet.getString("dbPassword"));
             plant.setName(resultSet.getString("name"));
             plant.setDescription(resultSet.getString("description"));
+            plant.setHash(resultSet.getString("hash"));
             return plant;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -11,11 +11,12 @@ public class Plant {
     private Integer dbPort;
     private String name;
     private String description;
+    private String hash;
 
     public Plant() {
     }
 
-    public Plant(String userEmail, String dbAddress, String dbUsername, String dbPassword, Integer dbPort, String name, String description) {
+    public Plant(String userEmail, String dbAddress, String dbUsername, String dbPassword, Integer dbPort, String name, String description, String hash) {
         this.userEmail = userEmail;
         this.dbAddress = dbAddress;
         this.dbUsername = dbUsername;
@@ -23,6 +24,7 @@ public class Plant {
         this.dbPort = dbPort;
         this.name = name;
         this.description = description;
+        this.hash = hash;
     }
 
     public String getUserEmail() {
@@ -81,6 +83,14 @@ public class Plant {
         this.description = description;
     }
 
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
     @Override
     public String toString() {
         return "Plant{" +
@@ -91,6 +101,7 @@ public class Plant {
                 ", dbPort=" + dbPort +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", hash='" + hash + '\'' +
                 '}';
     }
 }
