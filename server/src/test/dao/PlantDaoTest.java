@@ -64,6 +64,11 @@ public class PlantDaoTest {
 
         plant = new Plant(" " + new Random().nextInt(), EXISTANT_DB_ADDRESS, " ", " ", new Random().nextInt() + EXISTANT_DB_PORT, " ", " ", " ");
         assertTrue(plantDao.save(plant));
+
+        Integer port = new Random().nextInt();
+        plant = new Plant(" " + new Random().nextInt(), EXISTANT_DB_ADDRESS, " ", " ", port, " ", " ", " ");
+        plantDao.save(plant);
+        assertEquals(port, plantDao.find(EXISTANT_DB_ADDRESS, port).getDbPort());
     }
 
 }
