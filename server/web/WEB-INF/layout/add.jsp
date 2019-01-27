@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,12 +8,12 @@
       rel="stylesheet"
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-    />
+      />
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"
-    ></script>
+      ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   </head>
   <body>
@@ -23,28 +23,29 @@
     </div>
     <br />
     <div class="ui container grid">
-    <div class="ui secondary vertical menu four wide column">
-    <a class="item green active">
-    <i class="plus icon"></i> Add
-    </a>
-    <a class="item" href="stats">
-    <i class="chart line icon"></i> Plants Statuses
-    </a>
-    <div class="ui dropdown item green" tabindex="0">
-    <i class="dropdown icon"></i>
-
-    Monitor Live
-    <div class="menu">
-    <div class="header">Plants</div>
-    <c:forEach var="plant" items="${plants}">
-        <a class="item" href="live/<c:out value="${plant.hash}"/>"><c:out value="${plant.name}"/></a>
-    </c:forEach>
-    </div>
-    </div>
-    <a class="item active red" href="logout">
-    <i class="sign-out icon"></i> Logout
-    </a>
-    </div>
+      <div class="ui secondary vertical menu four wide column">
+        <a class="item green active">
+        <i class="plus icon"></i> Add
+        </a>
+        <a class="item" href="stats">
+        <i class="chart line icon"></i> Plants Statuses
+        </a>
+        <div class="ui dropdown item green" tabindex="0">
+          <i class="dropdown icon"></i>
+          Monitor Live
+          <div class="menu">
+            <div class="header">Plants</div>
+            <c:forEach var="plant" items="${plants}">
+              <a class="item" href="live/<c:out value="${plant.hash}"/>">
+              <c:out value="${plant.name}"/>
+              </a>
+            </c:forEach>
+          </div>
+        </div>
+        <a class="item active red" href="logout">
+        <i class="sign-out icon"></i> Logout
+        </a>
+      </div>
       <div class="ui placeholder segment twelve wide column">
         <div class="ui very relaxed stackable grid">
           <div class="column">
@@ -93,14 +94,13 @@
                 </div>
               </div>
               <button type="submit" class="ui green submit button">
-                <i class="plus icon"></i>Add
+              <i class="plus icon"></i>Add
               </button>
             </form>
           </div>
         </div>
       </div>
     </div>
-
     <script type="text/javascript">
       $(document).ready(function() {
         $(".ui.menu .ui.dropdown").dropdown({
