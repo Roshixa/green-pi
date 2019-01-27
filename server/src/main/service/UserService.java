@@ -15,4 +15,6 @@ public interface UserService {
     void saveSessionUser(User user, HttpSession httpSession);
 
     boolean hasLoggedIn(HttpSession httpSession);
+
+    String getUserEmail (HttpSession session);
 }

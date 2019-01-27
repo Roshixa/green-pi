@@ -43,46 +43,46 @@
         <div class="ui very relaxed stackable grid">
           <div class="column">
             <h2 class="ui header dividing center aligned">Add New Plant</h2>
-            <form class="ui form">
+            <form class="ui form" method="post" action="add">
               <div class="field">
                 <label>Plant Name</label>
                 <div class="ui left icon input">
-                  <input type="text" placeholder="Plant Name" />
+                  <input name="name" type="text" placeholder="Plant Name" />
                   <i class="bookmark outline icon"></i>
                 </div>
               </div>
               <div class="field">
                 <label>Server Address</label>
                 <div class="ui left icon input">
-                  <input type="text" placeholder="Server Address" />
+                  <input name="dbAddress" type="text" placeholder="Server Address" />
                   <i class="globe icon"></i>
                 </div>
               </div>
               <div class="field">
                 <label>Server Port</label>
                 <div class="ui left icon input">
-                  <input type="number" placeholder="3306" />
+                  <input name="port" type="number" placeholder="3306" value="3306"/>
                   <i class="globe icon"></i>
                 </div>
               </div>
               <div class="field">
                 <label>Database Username</label>
                 <div class="ui left icon input">
-                  <input type="text" placeholder="Database Username" />
+                  <input name="dbUsername" type="text" placeholder="Database Username" />
                   <i class="user icon"></i>
                 </div>
               </div>
               <div class="field">
                 <label>Database Password</label>
                 <div class="ui left icon input">
-                  <input type="password" placeholder="Database Password" />
+                  <input name="dbPassword" type="password" placeholder="Database Password" />
                   <i class="lock icon"></i>
                 </div>
               </div>
               <div class="field">
                 <label>Description</label>
                 <div class="ui left icon input">
-                  <textarea placeholder="Description"></textarea>
+                  <textarea name="description" placeholder="Description"></textarea>
                   <i class="file alternate outline icon"></i>
                 </div>
               </div>
