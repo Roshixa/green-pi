@@ -1,5 +1,8 @@
 package main.beans;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Reading {
     private Double luminosity;
     private Double humidity;

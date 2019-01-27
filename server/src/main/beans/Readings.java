@@ -1,8 +1,11 @@
 package main.beans;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Readings {
     private List<Double> luminosity;
     private List<Double> humidity;
