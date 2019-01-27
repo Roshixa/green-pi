@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ReadingDaoImpl implements ReadingDao {
-    static final Integer LIMIT_NB_DATA = 100;
+    private static final Integer LIMIT_NB_DATA = 100;
 
     @Override
     public Reading getData(String hostname, String username, String password) {
