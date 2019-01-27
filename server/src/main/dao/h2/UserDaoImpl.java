@@ -3,6 +3,7 @@ package main.dao.h2;
 import main.beans.User;
 import main.dao.UserDao;
 import main.utils.DbConnectionsUtils;
+import main.utils.StringUtils;
 
 import java.sql.*;
 
@@ -42,7 +43,7 @@ public class UserDaoImpl implements UserDao {
             try (PreparedStatement preparedStatement = connection
                     .prepareStatement("INSERT INTO User VALUES (?,?,?)")) {
                 preparedStatement.setString(1, user.getEmail());
-                preparedStatement.setString(2, user.getPassword());
+                preparedStatement.setString(2, StringUtils.encrypt(user.getPassword()));
                 preparedStatement.setString(3, user.getName());
                 preparedStatement.execute();
             } catch (SQLException e) {
