@@ -7,9 +7,10 @@ import main.dao.ReadingDao;
 import main.dao.mysql.ReadingDaoImpl;
 import main.service.RaspberryService;
 import main.utils.DbConnectionsUtils;
-import main.utils.StringUtils;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RaspberryServiceImpl implements RaspberryService {
     private ReadingDao readingDao;
@@ -26,26 +27,31 @@ public class RaspberryServiceImpl implements RaspberryService {
     }
 
     @Override
-    public String getLastData(Plant plant) {
+    public Reading getLastData(Plant plant) {
         if (checkConnection(plant)) {
             String hostname = "jdbc:mysql://" + plant.getDbAddress() + ":" + plant.getDbPort() + "/sensors";
             Reading reading = readingDao.getData(hostname, plant.getDbUsername(), plant.getDbPassword());
-            if (reading != null) {
-                return StringUtils.toJSON(reading);
-            }
+            return reading;
         }
         return null;
     }
 
     @Override
-    public String geAllLastData(Plant plant) {
+    public Readings geAllLastData(Plant plant) {
         if (checkConnection(plant)) {
             String hostname = "jdbc:mysql://" + plant.getDbAddress() + ":" + plant.getDbPort() + "/sensors";
             Readings readings = readingDao.getDatas(hostname, plant.getDbUsername(), plant.getDbPassword());
-            if (readings != null) {
-                return StringUtils.toJSON(readings);
-            }
+            return readings;
         }
         return null;
+    }
+
+    @Override
+    public List<Reading> getLastData(List<Plant> plants) {
+        List<Reading> readings = new ArrayList<>();
+        for (Plant plant : plants) {
+            readings.add(getLastData(plant));
+        }
+        return readings;
     }
 }
