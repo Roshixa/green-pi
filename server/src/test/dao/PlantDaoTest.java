@@ -56,15 +56,13 @@ public class PlantDaoTest {
 
     @Test
     public void savePlant() {
-        Plant plant = new Plant(EXISTANT_USER_EMAIL, EXISTANT_DB_ADDRESS, " ", " ", EXISTANT_DB_PORT, " ", " ");
+        Plant plant = new Plant(EXISTANT_USER_EMAIL, EXISTANT_DB_ADDRESS, " ", " ", EXISTANT_DB_PORT, " ", " "," ");
         assertFalse(plantDao.save(plant));
 
-        plant = new Plant(" " + new Random().nextInt(), new Random().nextInt() + EXISTANT_DB_ADDRESS,
-                " ", " ", EXISTANT_DB_PORT, " ", " ");
+        plant = new Plant(" " + new Random().nextInt(), new Random().nextInt() + EXISTANT_DB_ADDRESS, " ", " ", EXISTANT_DB_PORT, " ", " ", "");
         assertTrue(plantDao.save(plant));
 
-        plant = new Plant(" " + new Random().nextInt(), EXISTANT_DB_ADDRESS, " ", " ",
-                new Random().nextInt() + EXISTANT_DB_PORT, " ", " ");
+        plant = new Plant(" " + new Random().nextInt(), EXISTANT_DB_ADDRESS, " ", " ", new Random().nextInt() + EXISTANT_DB_PORT, " ", " ", " ");
         assertTrue(plantDao.save(plant));
     }
 
