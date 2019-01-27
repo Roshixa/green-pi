@@ -11,7 +11,7 @@ public interface RaspberryService {
 
     Reading getLastData(Plant plant);
 
-    Readings geAllLastData(Plant plant);
+    Readings getReadings(Plant plant);
 
     List<Reading> getLastData(List<Plant> plants);
 }

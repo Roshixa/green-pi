@@ -14,7 +14,7 @@ public class ReadingDaoImpl implements ReadingDao {
     private static final Integer LIMIT_NB_DATA = 100;
 
     @Override
-    public Reading getData(String hostname, String username, String password) {
+    public Reading getReading(String hostname, String username, String password) {
         Connection connection = DbConnectionsUtils.createMySqlConnection(hostname, username, password);
         if (connection != null) {
             try (Statement statement = connection.createStatement()) {
@@ -41,14 +41,14 @@ public class ReadingDaoImpl implements ReadingDao {
     }
 
     @Override
-    public Readings getDatas(String hostname, String username, String password) {
+    public Readings getReadings(String hostname, String username, String password) {
         Connection connection = DbConnectionsUtils.createMySqlConnection(hostname, username, password);
         if (connection != null) {
             try (Statement statement = connection.createStatement()) {
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM data ORDER BY id DESC LIMIT " + LIMIT_NB_DATA);
                 Readings readings = new Readings();
                 while (resultSet.next()) {
-                    readings.getHumidity().add(resultSet.getDouble("temperature"));
+                    readings.getTemperature().add(resultSet.getDouble("temperature"));
                     readings.getHumidity().add(resultSet.getDouble("humidity"));
                     readings.getMoisture().add(resultSet.getDouble("moisiture"));
                     readings.getLuminosity().add(resultSet.getDouble("luminosity"));

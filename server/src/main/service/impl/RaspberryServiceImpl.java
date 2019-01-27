@@ -30,17 +30,17 @@ public class RaspberryServiceImpl implements RaspberryService {
     public Reading getLastData(Plant plant) {
         if (checkConnection(plant)) {
             String hostname = "jdbc:mysql://" + plant.getDbAddress() + ":" + plant.getDbPort() + "/sensors";
-            Reading reading = readingDao.getData(hostname, plant.getDbUsername(), plant.getDbPassword());
+            Reading reading = readingDao.getReading(hostname, plant.getDbUsername(), plant.getDbPassword());
             return reading;
         }
         return null;
     }
 
     @Override
-    public Readings geAllLastData(Plant plant) {
+    public Readings getReadings(Plant plant) {
         if (checkConnection(plant)) {
             String hostname = "jdbc:mysql://" + plant.getDbAddress() + ":" + plant.getDbPort() + "/sensors";
-            Readings readings = readingDao.getDatas(hostname, plant.getDbUsername(), plant.getDbPassword());
+            Readings readings = readingDao.getReadings(hostname, plant.getDbUsername(), plant.getDbPassword());
             return readings;
         }
         return null;
