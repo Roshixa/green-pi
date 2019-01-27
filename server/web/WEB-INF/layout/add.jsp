@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,23 +23,28 @@
     </div>
     <br />
     <div class="ui container grid">
-      <div class="ui secondary vertical menu four wide column">
-        <a class="active item green"> <i class="plus icon"></i> Add </a>
-        <a class="item green">
-          <i class="chart line icon"></i> Plants Statuses
-        </a>
-        <div class="ui dropdown item green" tabindex="0">
-          <i class="dropdown icon"></i>
+    <div class="ui secondary vertical menu four wide column">
+    <a class="item green active">
+    <i class="plus icon"></i> Add
+    </a>
+    <a class="item" href="stats">
+    <i class="chart line icon"></i> Plants Statuses
+    </a>
+    <div class="ui dropdown item green" tabindex="0">
+    <i class="dropdown icon"></i>
 
-          Monitor Live
-          <div class="menu">
-            <div class="header">Plants</div>
-            <a class="item active">Plant WHATEVER</a>
-            <a class="item">Plant WHO????</a> <a class="item">Plant 2</a>
-          </div>
-        </div>
-        <a class="item green"> <i class="sign-out icon"></i> Logout </a>
-      </div>
+    Monitor Live
+    <div class="menu">
+    <div class="header">Plants</div>
+    <c:forEach var="plant" items="${plants}">
+        <a class="item" href="live/<c:out value="${plant.hash}"/>"><c:out value="${plant.name}"/></a>
+    </c:forEach>
+    </div>
+    </div>
+    <a class="item active red" href="logout">
+    <i class="sign-out icon"></i> Logout
+    </a>
+    </div>
       <div class="ui placeholder segment twelve wide column">
         <div class="ui very relaxed stackable grid">
           <div class="column">

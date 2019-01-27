@@ -1,7 +1,5 @@
 package main.servlets;
 
-import main.beans.Plant;
-import main.beans.User;
 import main.service.PlantService;
 import main.service.UserService;
 import main.service.impl.PlantServiceImpl;
@@ -41,6 +39,7 @@ public class PlantAddServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (userService.hasLoggedIn(request.getSession())) {
+            request.setAttribute("plants", plantService.findByUserEmail(userService.getSessionUser(request.getSession())));
             request.getRequestDispatcher("WEB-INF/layout/add.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/");
