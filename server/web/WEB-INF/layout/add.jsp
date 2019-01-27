@@ -3,14 +3,17 @@
         <html>
         <head>
         <title>GreenAutoBot - Add New Plant</title>
-        <link rel="stylesheet" type="text/css" href="semantic.min.css" />
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        />
         <script
         src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"
         ></script>
-        <script src="semantic.min.js"></script>
-        <style type="text/css"></style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
         </head>
         <body>
         <br />
@@ -83,7 +86,9 @@
         <i class="file alternate outline icon"></i>
         </div>
         </div>
-        <button type="submit" class="ui green submit button"><i class="plus icon"></i>Add</button>
+        <button type="submit" class="ui green submit button">
+        <i class="plus icon"></i>Add
+        </button>
         </form>
         </div>
         </div>
