@@ -49,4 +49,13 @@ public class UserServiceImpl implements UserService {
     public boolean hasLoggedIn(HttpSession httpSession) {
         return getSessionUser(httpSession) != null;
     }
+
+    @Override
+    public String getUserEmail(HttpSession session) {
+        if(hasLoggedIn(session)) {
+            User user = getSessionUser(session);
+            return user.getEmail();
+        }
+        else return null;
+    }
 }
