@@ -6,7 +6,8 @@ import org.junit.Test;
 
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class PlantServiceTest {
 
@@ -17,13 +18,13 @@ public class PlantServiceTest {
 
     @Test
     public void add() {
-        Boolean added = plantService.add(" ",EXISTANT_DB_ADDRESS, " ", " ", EXISTANT_DB_PORT, " ", " ");
+        Boolean added = plantService.add(" ", EXISTANT_DB_ADDRESS, " ", " ", EXISTANT_DB_PORT, " ", " ");
         assertNotNull(added);
 
-        added = plantService.add(" ",EXISTANT_DB_ADDRESS + new Random().nextInt(), " ", " ", EXISTANT_DB_PORT, " ", " ");
+        added = plantService.add(" ", EXISTANT_DB_ADDRESS + new Random().nextInt(), " ", " ", EXISTANT_DB_PORT, " ", " ");
         assertTrue(added);
 
-        added = plantService.add(" ",EXISTANT_DB_ADDRESS , " ", " ", EXISTANT_DB_PORT + new Random().nextInt(), " ", " ");
+        added = plantService.add(" ", EXISTANT_DB_ADDRESS, " ", " ", EXISTANT_DB_PORT + new Random().nextInt(), " ", " ");
         assertTrue(added);
 
     }
