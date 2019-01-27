@@ -11,11 +11,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PlantDaoImpl implements PlantDao {
+    private static final Integer DEFAULT_PORT_NUMBER = 3306;
 
     @Override
     public Plant find(String address, Integer port) {
         Connection connection = DbConnectionsUtils.createH2Connection(UserDaoImpl.HOSTNAME);
         if (connection != null) {
+            if (port == null){
+                port = DEFAULT_PORT_NUMBER;
+            }
             try (Statement statement = connection.createStatement()) {
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM Plant WHERE dbAddress='" + address + "' AND dbPort='" + port + "'");
                 if (resultSet.next()) {
@@ -68,10 +72,10 @@ public class PlantDaoImpl implements PlantDao {
                 preparedStatement.setString(2, plant.getDbAddress());
                 preparedStatement.setString(3, plant.getDbUsername());
                 preparedStatement.setString(4, plant.getDbPassword());
-                preparedStatement.setInt(5, plant.getDbPort());
+                preparedStatement.setInt(5, plant.getDbPort() == null ? DEFAULT_PORT_NUMBER : plant.getDbPort());
                 preparedStatement.setString(6, plant.getName());
                 preparedStatement.setString(7, plant.getDescription());
-                preparedStatement.setString(8, StringUtils.encrypt(plant.getDbAddress()+plant.getDbPort()));
+                preparedStatement.setString(8, StringUtils.encrypt(plant.getDbAddress() + plant.getDbPort()));
                 preparedStatement.execute();
             } catch (SQLException e) {
                 e.printStackTrace();
