@@ -13,9 +13,6 @@ public class Plant {
     private String description;
     private String hash;
 
-    public Plant() {
-    }
-
     public Plant(String userEmail, String dbAddress, String dbUsername, String dbPassword, Integer dbPort, String name, String description, String hash) {
         this.userEmail = userEmail;
         this.dbAddress = dbAddress;
@@ -25,6 +22,9 @@ public class Plant {
         this.name = name;
         this.description = description;
         this.hash = hash;
+    }
+
+    public Plant() {
     }
 
     public String getUserEmail() {
