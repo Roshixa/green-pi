@@ -6,7 +6,7 @@ import main.beans.User;
 import java.util.List;
 
 public interface PlantDao {
-    Plant find(Integer id);
+    Plant find(String address, Integer port);
 
     List<Plant> find(User user);
 

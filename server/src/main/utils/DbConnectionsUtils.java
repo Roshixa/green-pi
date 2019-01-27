@@ -27,15 +27,14 @@ public final class DbConnectionsUtils {
         statement.close();
         statement = connection.createStatement();
         sql = "CREATE TABLE IF NOT EXISTS Plant" +
-                "(id INTEGER AUTO_INCREMENT, " +
-                " userId INTEGER NOT NULL," +
+                "(userEmail VARCHAR(255) NOT NULL," +
                 " dbAddress VARCHAR(255) NOT NULL, " +
                 " dbUsername VARCHAR(255) NOT NULL, " +
                 " dbPassword VARCHAR(255) NOT NULL, " +
                 " dbPort INTEGER DEFAULT 3306, " +
                 " name VARCHAR(255) NOT NULL, " +
                 " description TEXT NOT NULL, " +
-                " PRIMARY KEY ( id ))";
+                " PRIMARY KEY (dbAddress,dbPort))";
         statement.executeUpdate(sql);
         statement.close();
     }

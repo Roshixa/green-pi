@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Plant {
-    private Integer id;
-    private Integer userId;
+    private String userEmail;
     private String dbAddress;
     private String dbUsername;
     private String dbPassword;
@@ -16,9 +15,8 @@ public class Plant {
     public Plant() {
     }
 
-    public Plant(Integer id, Integer userId, String dbAddress, String dbUsername, String dbPassword, Integer dbPort, String name, String description) {
-        this.id = id;
-        this.userId = userId;
+    public Plant(String userEmail, String dbAddress, String dbUsername, String dbPassword, Integer dbPort, String name, String description) {
+        this.userEmail = userEmail;
         this.dbAddress = dbAddress;
         this.dbUsername = dbUsername;
         this.dbPassword = dbPassword;
@@ -27,20 +25,12 @@ public class Plant {
         this.description = description;
     }
 
-    public Integer getId() {
-        return id;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getDbAddress() {
@@ -94,8 +84,7 @@ public class Plant {
     @Override
     public String toString() {
         return "Plant{" +
-                "id=" + id +
-                ", userId=" + userId +
+                "userEmail='" + userEmail + '\'' +
                 ", dbAddress='" + dbAddress + '\'' +
                 ", dbUsername='" + dbUsername + '\'' +
                 ", dbPassword='" + dbPassword + '\'' +
