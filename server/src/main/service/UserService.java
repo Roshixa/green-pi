@@ -16,5 +16,5 @@ public interface UserService {
 
     boolean hasLoggedIn(HttpSession httpSession);
 
-    String getUserEmail (HttpSession session);
+    String getUserEmail(HttpSession session);
 }

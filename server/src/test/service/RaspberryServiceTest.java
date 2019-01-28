@@ -5,8 +5,6 @@ import main.service.RaspberryService;
 import main.service.impl.RaspberryServiceImpl;
 import org.junit.Test;
 
-import javax.validation.constraints.AssertTrue;
-
 import java.util.Random;
 
 import static org.junit.Assert.assertFalse;
