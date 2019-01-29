@@ -39,7 +39,7 @@
           </div>
         </div>
         <a class="item active red" href="logout">
-        <i class="sign-out icon"></i> Logout
+        <i class="sign-out icon" href="logout"></i> Logout
         </a>
       </div>
       <div class="ui placeholder segment twelve wide column">
