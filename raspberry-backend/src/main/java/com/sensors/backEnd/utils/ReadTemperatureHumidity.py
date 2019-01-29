@@ -1,5 +1,5 @@
-import sys
 import Adafruit_DHT
+import sys
 
 sensor = Adafruit_DHT.DHT11
 pin = 21
