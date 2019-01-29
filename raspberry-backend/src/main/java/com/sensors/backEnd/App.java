@@ -2,13 +2,13 @@ package com.sensors.backEnd;
 
 import java.util.Timer;
 
-import com.sensors.backEnd.database.JDBCDataDAO;
+import com.sensors.backEnd.dao.DataDaoImpl;
 import com.sensors.backEnd.readData.*;
 
 public class App {
 	public static void main(String[] args) {
 		Timer timer = new Timer();
-		JDBCDataDAO dataJDBC = new JDBCDataDAO();
+		DataDaoImpl dataJDBC = new DataDaoImpl();
 		LuminosityMoisiture luminosityMoisiture = new LuminosityMoisiture();
 		TemperatureHumidity temperatureHumidity = new TemperatureHumidity();
 		ReadData readData = new ReadData(luminosityMoisiture, temperatureHumidity, dataJDBC);
