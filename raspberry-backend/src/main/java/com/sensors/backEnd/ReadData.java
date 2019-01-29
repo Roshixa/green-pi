@@ -2,6 +2,7 @@ package com.sensors.backEnd;
 
 import java.util.TimerTask;
 
+import com.sensors.backEnd.beans.Data;
 import com.sensors.backEnd.dao.DataDaoImpl;
 import com.sensors.backEnd.readData.LuminosityMoisiture;
 import com.sensors.backEnd.readData.TemperatureHumidity;

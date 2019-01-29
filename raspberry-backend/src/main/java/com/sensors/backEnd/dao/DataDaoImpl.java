@@ -1,6 +1,6 @@
 package com.sensors.backEnd.dao;
 
-import com.sensors.backEnd.Data;
+import com.sensors.backEnd.beans.Data;
 import com.sensors.backEnd.database.ConnectionFactory;
 
 import java.sql.Connection;
@@ -19,7 +19,7 @@ public class DataDaoImpl implements DataDao {
                     .prepareStatement("INSERT INTO sensors.data (temperature ,humidity,moisiture,luminosity) VALUES (?,?,?,?)");
             preparedStatement.setDouble(1, data.getTemperature());
             preparedStatement.setDouble(2, data.getHumidity());
-            preparedStatement.setDouble(3, data.getMoisiture());
+            preparedStatement.setDouble(3, data.getMoisture());
             preparedStatement.setDouble(4, data.getLuminosity());
             preparedStatement.executeUpdate();
             preparedStatement.close();
