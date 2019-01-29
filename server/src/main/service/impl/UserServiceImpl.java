@@ -58,4 +58,10 @@ public class UserServiceImpl implements UserService {
         }
         else return null;
     }
+
+    @Override
+    public void logout(HttpSession session) {
+        session.removeAttribute("user");
+        session.invalidate();
+    }
 }
