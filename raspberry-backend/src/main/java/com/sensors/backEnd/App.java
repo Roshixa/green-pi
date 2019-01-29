@@ -8,6 +8,6 @@ public class App {
     public static void main(String[] args) {
         Timer timer = new Timer();
         DataServiceImpl dataService = new DataServiceImpl();
-        timer.scheduleAtFixedRate(dataService, 0, 10000);
+        timer.scheduleAtFixedRate(dataService, 0, 1000);
     }
 }
