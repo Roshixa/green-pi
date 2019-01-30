@@ -1,4 +1,4 @@
-package com.sensors.backEnd.utils;
+package com.sensors.raspberry.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

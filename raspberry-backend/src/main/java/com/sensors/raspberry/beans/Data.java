@@ -1,4 +1,4 @@
-package com.sensors.backEnd.beans;
+package com.sensors.raspberry.beans;
 
 import java.util.Date;
 

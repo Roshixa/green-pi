@@ -1,4 +1,4 @@
-package com.sensors.backEnd;
+package com.sensors.raspberry;
 
 import static org.junit.Assert.assertTrue;
 

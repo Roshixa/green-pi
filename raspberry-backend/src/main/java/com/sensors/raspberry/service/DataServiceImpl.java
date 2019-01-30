@@ -1,11 +1,11 @@
-package com.sensors.backEnd.service;
+package com.sensors.raspberry.service;
 
 import com.pi4j.io.spi.SpiChannel;
 import com.pi4j.io.spi.SpiDevice;
 import com.pi4j.io.spi.SpiFactory;
-import com.sensors.backEnd.beans.Data;
-import com.sensors.backEnd.dao.DataDao;
-import com.sensors.backEnd.dao.DataDaoImpl;
+import com.sensors.raspberry.beans.Data;
+import com.sensors.raspberry.dao.DataDao;
+import com.sensors.raspberry.dao.DataDaoImpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import java.util.TimerTask;
 public class DataServiceImpl extends TimerTask implements DataService {
     private final static int MOISTURE_CHANNEL = 1;
     private final static int LUMINOSITY_CHANNEL = 0;
-    private final static String SCRIPT_PATH = "src/main/java/com/sensors/backEnd/utils/ReadTemperatureHumidity.py";
+    private final static String SCRIPT_PATH = "src/main/java/com/sensors/raspberry/utils/ReadTemperatureHumidity.py";
 
     private final DataDao dataDao;
     private SpiDevice spiDevice;

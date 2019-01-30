@@ -1,7 +1,7 @@
-package com.sensors.backEnd.dao;
+package com.sensors.raspberry.dao;
 
-import com.sensors.backEnd.beans.Data;
-import com.sensors.backEnd.utils.DbConnectionUtils;
+import com.sensors.raspberry.beans.Data;
+import com.sensors.raspberry.utils.DbConnectionUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

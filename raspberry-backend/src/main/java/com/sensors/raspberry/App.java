@@ -1,6 +1,6 @@
-package com.sensors.backEnd;
+package com.sensors.raspberry;
 
-import com.sensors.backEnd.service.DataServiceImpl;
+import com.sensors.raspberry.service.DataServiceImpl;
 
 import java.util.Timer;
 
